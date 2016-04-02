@@ -2,7 +2,7 @@ package uk.tomgalvin.nxblue;
 
 
 /**
- * Exception thrown due to an error in PC-robot communications.
+ * Exception thrown due to an error in PC-NXT communications.
  * 
  * @author Tom Galvin
  */

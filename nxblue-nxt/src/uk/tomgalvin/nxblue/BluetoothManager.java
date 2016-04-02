@@ -4,7 +4,7 @@ import lejos.nxt.comm.Bluetooth;
 import uk.tomgalvin.nxblue.Socket;
 
 /**
- * Allows you to wait for connections on the robot side.
+ * Allows you to wait for connections on the NXT side.
  * 
  * @author Tom Galvin
  */

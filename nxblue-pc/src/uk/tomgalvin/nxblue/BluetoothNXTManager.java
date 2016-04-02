@@ -10,15 +10,15 @@ import lejos.pc.comm.NXTComm;
 import lejos.pc.comm.NXTCommException;
 
 /**
- * Allows you to find and initiate connections to robots from the computer.
+ * Allows you to find and initiate connections to NXTs from the computer.
  * 
  * @author Tom Galvin
  */
-public class BluetoothRobotManager {
+public class BluetoothNXTManager {
 	/**
-	 * Create a new bluetooth robot manager.
+	 * Create a new bluetooth NXT manager.
 	 */
-	public BluetoothRobotManager() {
+	public BluetoothNXTManager() {
 	}
 	
 	/**
@@ -41,7 +41,7 @@ public class BluetoothRobotManager {
 	 * @param name The name of the NXT (eg. {@code "Ultron"}).
 	 * @param mac The MAC address of the NXT (eg. {@code "00:16:53:1B:59:4D"} or
 	 * {@code "0016531b594d"}).
-	 * @return The {@link NXTInfo} corresponding to the robot with the given
+	 * @return The {@link NXTInfo} corresponding to the NXT with the given
 	 *         name and MAC address.
 	 */
 	public NXTInfo getNXT(String name, String mac) {
@@ -54,8 +54,8 @@ public class BluetoothRobotManager {
 	 * Note that the implementation of the bluetooth searching provided by the
 	 * LeJOS API (and I assume, in turn, by BlueCove) is very flaky. Often,
 	 * this method will take a long time to complete a search, and may not even
-	 * return a robot in the vicinity (which can be connected to if the MAC
-	 * address and robot name are hard-coded). Additionally, the robot and the
+	 * return a NXT in the vicinity (which can be connected to if the MAC
+	 * address and NXT name are hard-coded). Additionally, the NXT and the
 	 * connecting PC must have been bluetooth-paired in advance beforehand,
 	 * eliminating many of the potential benefits of scanning for nearby NXT
 	 * bricks. Hence, until that is fixed, it is recommended that the name and
@@ -100,18 +100,18 @@ public class BluetoothRobotManager {
 	}
 
 	/**
-	 * Create a connection to the robot with the given name.
+	 * Create a connection to the NXT with the given name.
 	 * 
 	 * @param info
-	 *            The identity of the robot to connect to.
-	 * @return A socket with which to communicate with the robot.
+	 *            The identity of the NXT to connect to.
+	 * @return A socket with which to communicate with the NXT.
 	 * @throws CommException
 	 *             When something goes wrong during initiation of the
 	 *             connection.
 	 */
-	public RobotSocket createConnection(NXTInfo info) {
+	public NXTSocket createConnection(NXTInfo info) {
 		NXTComm comm = createNXTComm();
-		BluetoothRobotSocket socket = new BluetoothRobotSocket(info, comm);
+		BluetoothNXTSocket socket = new BluetoothNXTSocket(info, comm);
 		return socket;
 	}
 }

@@ -12,8 +12,8 @@ import uk.tomgalvin.nxblue.Socket;
 import uk.tomgalvin.nxblue.SocketListener;
 
 /**
- * A bluetooth implementation of a socket to facilitate computer-robot
- * communications, on the robot side.
+ * A bluetooth implementation of a socket to facilitate computer-NXT
+ * communications, on the NXT side.
  * 
  * @author Tom Galvin
  */
@@ -29,7 +29,7 @@ public class BluetoothSocket implements Socket {
 	 * Creates a new BluetoothSocket.
 	 * 
 	 * @param connection The connection object containing the input and
-	 * output streams to send and receive data to and from the robot.
+	 * output streams to send and receive data to and from the NXT.
 	 */
 	public BluetoothSocket(BTConnection connection) {
 		this.connection = connection;

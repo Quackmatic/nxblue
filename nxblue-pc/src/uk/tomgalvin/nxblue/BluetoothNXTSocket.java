@@ -9,12 +9,12 @@ import lejos.pc.comm.NXTCommException;
 import lejos.pc.comm.NXTInfo;
 
 /**
- * A bluetooth implementation of a socket to facilitate computer-robot
+ * A bluetooth implementation of a socket to facilitate computer-NXT
  * communications.
  * 
  * @author Tom Galvin
  */
-public class BluetoothRobotSocket implements RobotSocket {
+public class BluetoothNXTSocket implements NXTSocket {
 	private NXTInfo info;
 	protected NXTComm comm;
 	private ArrayList<SocketListener> listeners;
@@ -31,7 +31,7 @@ public class BluetoothRobotSocket implements RobotSocket {
 	 * @param comm An {@link NXTComm} object which manages the underlying
 	 * connection.
 	 */
-	public BluetoothRobotSocket(NXTInfo info, NXTComm comm) {
+	public BluetoothNXTSocket(NXTInfo info, NXTComm comm) {
 		this.info = info;
 		this.comm = comm;
 		this.listeners = new ArrayList<SocketListener>();
@@ -152,12 +152,12 @@ public class BluetoothRobotSocket implements RobotSocket {
 	}
 
 	@Override
-	public String getRobotName() {
+	public String getName() {
 		return info.name;
 	}
 
 	@Override
-	public String getRobotID() {
+	public String getMacAddress() {
 		return info.deviceAddress;
 	}
 	
